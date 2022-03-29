@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/campaignHomeFragment">
+
+    <fragment
+        android:id="@+id/campaignHomeFragment"
+        android:name="com.example.yardmeliproje.CampaignHomeFragment"
+        android:label="fragment_campaign_home"
+        tools:layout="@layout/fragment_campaign_home" >
+        <action
+            android:id="@+id/goToCampaignDetailAction"
+            app:destination="@id/campaignDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/organizationHomeFragment"
+        android:name="com.example.yardmeliproje.OrganizationHomeFragment"
+        android:label="fragment_organization_home"
+        tools:layout="@layout/fragment_organization_home" >
+        <action
+            android:id="@+id/goToOrgDetailAction"
+            app:destination="@id/organizationDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userHomeFragment"
+        android:name="com.example.yardmeliproje.UserHomeFragment"
+        android:label="fragment_user_home"
+        tools:layout="@layout/fragment_user_home" />
+    <fragment
+        android:id="@+id/organizationDetailFragment"
+        android:name="com.example.yardmeliproje.OrganizationDetailFragment"
+        android:label="fragment_organization_detail"
+        tools:layout="@layout/fragment_organization_detail" />
+    <fragment
+        android:id="@+id/campaignDetailFragment"
+        android:name="com.example.yardmeliproje.CampaignDetailFragment"
+        android:label="fragment_campaign_detail"
+        tools:layout="@layout/fragment_campaign_detail" >
+        <action
+            android:id="@+id/goToCampaignPayAction"
+            app:destination="@id/campaignPayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/campaignPayFragment"
+        android:name="com.example.yardmeliproje.CampaignPayFragment"
+        android:label="fragment_campaign_pay"
+        tools:layout="@layout/fragment_campaign_pay" />
+</navigation>

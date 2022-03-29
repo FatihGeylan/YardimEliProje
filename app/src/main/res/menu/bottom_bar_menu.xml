@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/campaignHomeFragment"
+        android:icon="@drawable/icon_campaign"
+        android:title="Kampanya" />
+    <item
+        android:id="@+id/organizationHomeFragment"
+        android:icon="@drawable/icon_organization"
+        android:title="Organizasyon" />
+    <item
+        android:id="@+id/userHomeFragment"
+        android:icon="@drawable/icon_profile"
+        android:title="Profil" />
+</menu>
