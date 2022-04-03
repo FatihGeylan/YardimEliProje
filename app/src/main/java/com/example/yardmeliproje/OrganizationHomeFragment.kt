@@ -18,37 +18,40 @@ import retrofit2.Response
 class OrganizationHomeFragment : Fragment() {
 
 
-    private  lateinit var  organizasyonlist:ArrayList<organizasyon_test>
+    private  lateinit var  organizasyonlist:ArrayList<Organizasyonlar>
     private lateinit var  adapter:organizasyonRVAdapter
-
+    private lateinit var  kdi:OrganizasyonlarDaoInterface
+    //private lateinit var response: Response<OrganizasyonlarCevap>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val tasarim= inflater.inflate(R.layout.fragment_organization_home, container, false)
 
-        //organizasyon_recyclerView.setHasFixedSize(true)
+        return tasarim
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        organizasyon_recyclerView.setHasFixedSize(true)
         organizasyon_recyclerView.layoutManager = LinearLayoutManager(activity)
-        tasarim.organizasyon_recyclerView.layoutManager=LinearLayoutManager(activity)
-        tasarim.organizasyon_recyclerView.adapter=
-
-        val o1= organizasyon_test("1","Anne çocuk dsadas","acev","acev.jpg")
-        val o2= organizasyon_test("2","merte gotten","akut","akut.jpg")
-        organizasyonlist= ArrayList<organizasyon_test>()
+        organizasyonlist= ArrayList<Organizasyonlar>()
+        //organizasyonlist= ArrayList<Organizasyonlar>()
+        /*val o1= Organizasyonlar("1","Anne çocuk dsadas","acev","acev")
+        val o2= Organizasyonlar("2","merte gotten","akut","akut")
+        organizasyonlist= ArrayList<Organizasyonlar>()
         organizasyonlist.add(o1)
-        organizasyonlist.add(o2)
-        adapter= organizasyonRVAdapter(requireContext(),organizasyonlist)
-        organizasyon_recyclerView.adapter=adapter
-
-        Log.e("as","3")
+        organizasyonlist.add(o2)*/
+        kdi = ApiUtils.getOrganizasyonlarDaoInterface()
         tumOrganizasyonlar()
 
 
-        return tasarim
+        Log.e("as","3")
+
     }
 
     fun tumOrganizasyonlar(){
 
         Log.e("as","5")
-        val kdi = ApiUtils.getOrganizasyonlarDaoInterface()
+
 
         kdi.tumOrganizasyonlar().enqueue(object : Callback<OrganizasyonlarCevap>{
 
@@ -57,19 +60,10 @@ class OrganizationHomeFragment : Fragment() {
                 if(response != null){
 
                     val orgList = response.body().data
+                    adapter= organizasyonRVAdapter(requireContext(),orgList)
+                    organizasyon_recyclerView.adapter=adapter
 
-                    for(k in orgList){
 
-                        Log.e("*******","*******")
-                        Log.e("Kişi ad",k.id)
-                        Log.e("Kişi tel",k.name)
-                        Log.e("Kişi tel",k.shortName)
-                        Log.e("Kişi tel",k.description)
-                        Log.e("Kişi tel",k.accountNumber)
-                        Log.e("Kişi tel",k.photoUrl)
-                        Log.e("Kişi tel",k.balance)
-
-                    }
 
                 }
 

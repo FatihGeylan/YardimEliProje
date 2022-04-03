@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class organizasyonRVAdapter(private val mContext:Context,private  val organizasyonListesi:List<organizasyon_test>):RecyclerView.Adapter<organizasyonRVAdapter.organizasyonNesneTutucu>() {
+class organizasyonRVAdapter(private val mContext:Context,private  val organizasyonListesi:List<Organizasyonlar>):RecyclerView.Adapter<organizasyonRVAdapter.organizasyonNesneTutucu>() {
 
     inner class organizasyonNesneTutucu(view:View):RecyclerView.ViewHolder(view){
 
@@ -43,7 +43,7 @@ class organizasyonRVAdapter(private val mContext:Context,private  val organizasy
 
         holder.organizasyon_kisa.text=organizasyon.shortName
         holder.organizasyon_uzun.text=organizasyon.name
-        holder.organizasyon_gorsel.setImageResource(mContext.resources.getIdentifier(organizasyon.photoUrl,"drawable",mContext.packageName))
+        holder.organizasyon_gorsel.setImageResource(mContext.resources.getIdentifier(organizasyon.photoUrl.dropLast(4),"drawable",mContext.packageName))
 
     }
 
