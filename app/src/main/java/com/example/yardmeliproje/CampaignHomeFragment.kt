@@ -15,13 +15,7 @@ class CampaignHomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val tasarim= inflater.inflate(R.layout.fragment_campaign_home, container, false)
 
-        tasarim.goToCampaignsDetail.setOnClickListener{
 
-            Navigation.findNavController(it).navigate(R.id.goToCampaignDetailAction)
-
-
-        }
-        //meraba
 
         return tasarim
     }

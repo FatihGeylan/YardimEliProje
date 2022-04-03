@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_organization_home.*
 import kotlinx.android.synthetic.main.fragment_organization_home.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -15,22 +17,30 @@ import retrofit2.Response
 
 class OrganizationHomeFragment : Fragment() {
 
+
+    private  lateinit var  organizasyonlist:ArrayList<organizasyon_test>
+    private lateinit var  adapter:organizasyonRVAdapter
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val tasarim= inflater.inflate(R.layout.fragment_organization_home, container, false)
 
+        //organizasyon_recyclerView.setHasFixedSize(true)
+        organizasyon_recyclerView.layoutManager = LinearLayoutManager(activity)
+        tasarim.organizasyon_recyclerView.layoutManager=LinearLayoutManager(activity)
+        tasarim.organizasyon_recyclerView.adapter=
+
+        val o1= organizasyon_test("1","Anne çocuk dsadas","acev","acev.jpg")
+        val o2= organizasyon_test("2","merte gotten","akut","akut.jpg")
+        organizasyonlist= ArrayList<organizasyon_test>()
+        organizasyonlist.add(o1)
+        organizasyonlist.add(o2)
+        adapter= organizasyonRVAdapter(requireContext(),organizasyonlist)
+        organizasyon_recyclerView.adapter=adapter
+
         Log.e("as","3")
         tumOrganizasyonlar()
-        tasarim.goToDetail.setOnClickListener{
 
-            Log.e("as","4")
-
-            Navigation.findNavController(it).navigate(R.id.goToOrgDetailAction)
-
-
-
-
-
-        }
 
         return tasarim
     }
