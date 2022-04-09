@@ -7,7 +7,7 @@
     tools:context=".OrganizationDetailFragment">
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/organizasyonAyrntıIsim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
@@ -16,10 +16,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/organizasyonAyrntıResim" />
 
     <ProgressBar
-        android:id="@+id/progressBar4"
+        android:id="@+id/organizasyonAyrntıBalance"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="357dp"
         android:layout_height="27dp"
@@ -29,10 +29,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintTop_toBottomOf="@+id/organizasyonAyrntıAciklama" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/organizasyonAyrntıResim"
         android:layout_width="146dp"
         android:layout_height="146dp"
         android:layout_marginTop="29dp"
@@ -43,7 +43,7 @@
         tools:src="@drawable/icon_organization" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/organizasyonAyrntıAciklama"
         android:layout_width="369dp"
         android:layout_height="57dp"
         android:layout_marginTop="28dp"
@@ -51,6 +51,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintTop_toBottomOf="@+id/organizasyonAyrntıIsim" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

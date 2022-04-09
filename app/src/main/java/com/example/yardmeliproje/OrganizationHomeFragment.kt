@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_organization_home.*
@@ -15,16 +16,17 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class OrganizationHomeFragment : Fragment() {
+class OrganizationHomeFragment : Fragment(){
 
 
     private  lateinit var  organizasyonlist:ArrayList<Organizasyonlar>
     private lateinit var  adapter:organizasyonRVAdapter
     private lateinit var  kdi:OrganizasyonlarDaoInterface
-    //private lateinit var response: Response<OrganizasyonlarCevap>
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val tasarim= inflater.inflate(R.layout.fragment_organization_home, container, false)
+
 
         return tasarim
     }
@@ -34,12 +36,6 @@ class OrganizationHomeFragment : Fragment() {
         organizasyon_recyclerView.setHasFixedSize(true)
         organizasyon_recyclerView.layoutManager = LinearLayoutManager(activity)
         organizasyonlist= ArrayList<Organizasyonlar>()
-        //organizasyonlist= ArrayList<Organizasyonlar>()
-        /*val o1= Organizasyonlar("1","Anne çocuk dsadas","acev","acev")
-        val o2= Organizasyonlar("2","merte gotten","akut","akut")
-        organizasyonlist= ArrayList<Organizasyonlar>()
-        organizasyonlist.add(o1)
-        organizasyonlist.add(o2)*/
         kdi = ApiUtils.getOrganizasyonlarDaoInterface()
         tumOrganizasyonlar()
 
@@ -47,6 +43,7 @@ class OrganizationHomeFragment : Fragment() {
         Log.e("as","3")
 
     }
+
 
     fun tumOrganizasyonlar(){
 
@@ -62,7 +59,6 @@ class OrganizationHomeFragment : Fragment() {
                     val orgList = response.body().data
                     adapter= organizasyonRVAdapter(requireContext(),orgList)
                     organizasyon_recyclerView.adapter=adapter
-
 
 
                 }

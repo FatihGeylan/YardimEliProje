@@ -33,7 +33,17 @@
         android:id="@+id/organizationDetailFragment"
         android:name="com.example.yardmeliproje.OrganizationDetailFragment"
         android:label="fragment_organization_detail"
-        tools:layout="@layout/fragment_organization_detail" />
+        tools:layout="@layout/fragment_organization_detail" >
+        <argument
+            android:name="organizasyonAyrintiResim"
+            app:argType="string" />
+        <argument
+            android:name="organizasyonAyrintiIsim"
+            app:argType="string" />
+        <argument
+            android:name="organizasyonAyrintiAciklama"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/campaignDetailFragment"
         android:name="com.example.yardmeliproje.CampaignDetailFragment"
