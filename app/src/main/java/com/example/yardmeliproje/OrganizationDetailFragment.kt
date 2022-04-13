@@ -16,21 +16,14 @@ class OrganizationDetailFragment : Fragment() {
     var resim: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         val tasarim = inflater.inflate(R.layout.fragment_organization_detail,container,false)
-
         return tasarim
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val bundle:OrganizationDetailFragmentArgs by navArgs()
-
         Isim= bundle.organizasyonAyrintiIsim
         organizasyonAyrntıIsim.text=Isim
         resim=bundle.organizasyonAyrintiResim

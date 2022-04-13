@@ -3,46 +3,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="200dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/organizasyon_cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/background">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/organizasyon_shape"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/organizasyon_gorsel"
-                android:layout_width="49dp"
-                android:layout_height="44dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/icon_organization"
-                tools:layout_editor_absoluteX="16dp" />
+                app:srcCompat="@drawable/icon_organization" />
 
             <TextView
                 android:id="@+id/organizasyon_kisa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="28dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/organizasyon_gorsel"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/organizasyon_uzun"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/organizasyon_gorsel" />
 
             <TextView
                 android:id="@+id/organizasyon_uzun"
                 android:layout_width="283dp"
                 android:layout_height="22dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="6dp"
+                android:autoText="false"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/organizasyon_gorsel"
-                app:layout_constraintTop_toBottomOf="@+id/organizasyon_kisa" />
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/organizasyon_gorsel"
+                app:layout_constraintVertical_bias="0.727" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
